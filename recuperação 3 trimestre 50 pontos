@@ -1,1 +1,97 @@
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
+export default function ProfileScreen() {
+  return (
+    <View style={styles.container}>
+      {/* Imagem de capa */}
+      <Image
+        source={{ uri: 'https://www.hipertrofia.org/blog/wp-content/uploads/2025/08/MR-OLYMPIA-2025.jpg' }}
+        style={styles.coverImage}
+      />
+
+      {/* Foto de perfil */}
+      <Image
+        source={{ uri:'https://tv.sbt.com.br/_next/image?url=https%3A%2F%2Fstatic.sbt.com.br%2Fnoticias%2Fimages%2F259897.jpg&w=1080&q=90'}}
+        style={styles.profileImage}
+      />
+
+      {/* Nome */}
+      <Text style={styles.name}>Renato Cariani</Text>
+
+      {/* Descrição */}
+      <Text style={styles.bio}>Professor | Atleta | Empresário </Text>
+
+      {/* Local e Email */}
+      <Text style={styles.info}>📍 Brazil</Text>
+      <Text style={styles.info}>✉️ Send E-mail</Text>
+
+      {/* Seguidores */}
+      <View style={styles.stats}>
+        <Text style={styles.statText}>10.000.000 Followers</Text>
+        <Text style={styles.statText}>123 Following</Text>
+      </View>
+
+      {/* Botão de seguir */}
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Follow</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  coverImage: {
+    width: '100%',
+    height: 180,
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginTop: -50,
+    borderWidth: 3,
+    borderColor: '#fff',
+  },
+  name: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+  bio: {
+    textAlign: 'center',
+    color: '#555',
+    marginHorizontal: 20,
+    marginTop: 5,
+    fontSize: 16,
+  },
+  info: {
+    color: '#777',
+    marginTop: 4,
+  },
+  stats: {
+    flexDirection: 'row',
+    marginTop: 15,
+    justifyContent: 'space-between',
+    width: '70%',
+  },
+  statText: {
+    fontWeight: '600',
+  },
+  button: {
+    backgroundColor: '#1DB954',
+    paddingVertical: 10,
+    paddingHorizontal: 40,
+    borderRadius: 25,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+});
